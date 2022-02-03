@@ -1,14 +1,24 @@
-for (var i = 0; i < document.querySelectorAll(".drum").length; i++)
-{
-    document.querySelectorAll(".drum")[i].addEventListener("click", function () {
-        MakeSound(this.innerHTML);
-        animation(this.innerHTML);
-    });
-}
+// for (var i = 0; i < document.querySelectorAll(".drum").length; i++)
+// {
+//     document.querySelectorAll(".drum")[i].addEventListener("click", function () {
+//         MakeSound(this.innerHTML);
+//         animation(this.innerHTML);
+//     });
+// }
 
-document.addEventListener("keypress", function (button) {
-    MakeSound(button.key);
-    animation(button.key);
+$(".drum").click(function () {
+    MakeSound($(this).attr("class")[0]);
+    animation($(this).attr("class")[0]);
+})
+
+// document.addEventListener("keypress", function (button) {
+//     MakeSound(button.key);
+//     animation(button.key);
+// })
+
+$(document).keypress(function (event) {
+    MakeSound(event.key);
+    animation(event.key);
 })
 
 
